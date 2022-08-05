@@ -1,9 +1,9 @@
-const generateManager = function(manager) {
+const createManager = function(manager) {
     return `
 <div class="col" >
     <div class="card text-bg-dark mb-3" style="max-width: auto;">
         <div class="card-body">${manager.name}</div>
-        <div class="card-title text-center">Title</div>
+        <div class="card-title text-center">Manager</div>
         <div class="card-text text-center">${manager.id} </div>
         <div class="card-text text-center">${manager.email} </div>
         <div class="card-text text-center">${manager.officeNumber}</div>
@@ -12,7 +12,35 @@ const generateManager = function(manager) {
     `;
 }
 
-const generateMyTeam = function (myTeam) {
+const createIntern = function(intern) {
+    return `
+<div class="col" >
+    <div class="card text-bg-dark mb-3" style="max-width: auto;">
+        <div class="card-body">${intern.name}</div>
+        <div class="card-title text-center">Intern</div>
+        <div class="card-text text-center">${intern.id} </div>
+        <div class="card-text text-center">${intern.email} </div>
+        <div class="card-text text-center">${intern.officeNumber}</div>
+    </div>
+</div>
+    `;
+}
+
+const createEngineer = function(engineer) {
+    return `
+<div class="col" >
+    <div class="card text-bg-dark mb-3" style="max-width: auto;">
+        <div class="card-body">${engineer.name}</div>
+        <div class="card-title text-center">Engineer</div>
+        <div class="card-text text-center">${engineer.id} </div>
+        <div class="card-text text-center">${engineer.email} </div>
+        <div class="card-text text-center">${engineer.officeNumber}</div>
+    </div>
+</div>
+    `;
+}
+
+const createMyTeam = function (myTeam) {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -41,4 +69,4 @@ const generateMyTeam = function (myTeam) {
     `;
 }
 
-module.exports = generateHtml;
+//module.exports = generateHtml;
