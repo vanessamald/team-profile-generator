@@ -15,7 +15,7 @@ const addingEmployee = () => {
         type: 'checkbox',
         name: 'role',
         message: "Choose the employee's role",
-        choices: ['Engineer', 'Intern', 'Manager']
+        choices: ['Engineer', 'Intern', 'Manager', 'Done adding employees'],
     }
     ])
     .then(answers => {
@@ -31,6 +31,14 @@ const addingEmployee = () => {
     }
         if (userRole == 'Engineer') {
         addingEngineer();
+    }
+        if (userRole == 'Done adding employees') {
+        generateTeam();
+    }
+        if (userRole == 'Manager' && userRole == 'Intern' && userRole == 'Engineer') {
+            addingManager();
+            addingIntern();
+            addingEngineer();
         }
     })
 };
@@ -48,7 +56,7 @@ const addingManager = () => {
                 return 'Please enter a name';
             }
         }
-    }],
+    },
     {
         type: 'input',
         name: 'id',
@@ -85,10 +93,11 @@ const addingManager = () => {
             }
         }
     }
-    )
+])
 .then(answers => {
     const { name, id, email, officeNumber } = answers;
     teamArray.push(new Manager(name, id, email, officeNumber));
+    addingEmployee();
 })
 
 };
@@ -147,6 +156,7 @@ const addingIntern = () => {
         const { name, id, email, officeNumber } = answers
         console.log(answers);
         teamArray.push(new Intern(name, id, email, officeNumber));
+        addingEmployee();
     })
     
 };
@@ -203,8 +213,10 @@ const addingEngineer = () => {
     }])
     .then (answers => {
         const { name, id, email, officeNumber } = answers;
+        teamArray.push(new Engineer(name, id, email, officeNumber));
+        addingEmployee();
     })
-    teamArray.push(new Engineer(name, id, email, officeNumber));
+    
 };
 
 const createProfile = data => {
@@ -218,9 +230,21 @@ const createProfile = data => {
     })
 }
 
+/*
 const generateTeam = () => {
+    console.log(teamArray);
+
+    teamArray => {
+        const html = generateHtml(teamArray);
+        createProfile(html);
+    } 
+};
+*/
+
+const generateTeam = () => {
+    console.log(teamArray);
     const html = generateHtml(teamArray);
     createProfile(html);
-};
+}
 
 addingEmployee();
