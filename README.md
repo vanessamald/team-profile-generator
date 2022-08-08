@@ -4,7 +4,11 @@
 An application that generates a web development's team profile based on the user's input using the Inquirer package from Node.js. 
 
 ## Table of Contents
-
+- [Installation](Installation)
+- [Usage](Usage)
+- [Tests](Tests)
+- [Contributing](Contributing)
+- [Questions](Questions)
 
 ## Installation 
 - Clone repo
