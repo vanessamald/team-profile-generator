@@ -231,17 +231,6 @@ const createProfile = data => {
     })
 }
 
-/*
-const generateTeam = () => {
-    console.log(teamArray);
-
-    teamArray => {
-        const html = generateHtml(teamArray);
-        createProfile(html);
-    } 
-};
-*/
-
 const generateTeam = () => {
     console.log(teamArray);
     const html = generateHtml(teamArray);
