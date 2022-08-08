@@ -1,12 +1,14 @@
 const createManager = function(manager) {
     return `
-<div class="col" >
-    <div class="card text-bg-dark mb-3" style="max-width: auto;">
-        <div class="card-body">${manager.name}</div>
-        <div class="card-title text-center">Manager</div>
-        <div class="card-text text-center">ID: ${manager.id} </div>
-        <div class="card-text text-center">Email: <a href="mailto:${manager.email}">${manager.email}</a></div>
-        <div class="card-text text-center">Office Number: ${manager.officeNumber}</div>
+<div class="col-4 mt-4 border">
+    <div class="card-header text-bg-dark mb-3" style="max-width: auto;">
+        <h2 class="text-center">${manager.name}</h2>
+        <h3 class="card-title text-center">Manager</h3>
+    </div>
+    <div class="card-body">
+        <p class="card-text text-center">ID: ${manager.id} </p>
+        <p class="card-text text-center">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+        <p class="card-text text-center">Office Number: ${manager.officeNumber}</p>
     </div>
 </div>
     `;
@@ -14,13 +16,15 @@ const createManager = function(manager) {
 
 const createIntern = function(intern) {
     return `
-<div class="col" >
-    <div class="card text-bg-dark mb-3" style="max-width: auto;">
-        <div class="card-body">${intern.name}</div>
-        <div class="card-title text-center">Intern</div>
-        <div class="card-text text-center">ID: ${intern.id} </div>
-        <div class="card-text text-center">Email: <a href="mailto:${intern.email}">${intern.email}</a></div>
-        <div class="card-text text-center">School: ${intern.school}</div>
+<div class="col-4 mt-4 border">
+    <div class="card-header text-bg-dark mb-3" style="max-width: auto;">
+        <h2 class="text-center">${intern.name}</h2>
+        <h3 class="card-title text-center">Intern</h3>
+    </div>
+    <div class="card-body">
+        <p class="card-text text-center">ID: ${intern.id} </p>
+        <p class="card-text text-center">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+        <p class="card-text text-center">School: ${intern.school}</p>
     </div>
 </div>
     `;
@@ -28,13 +32,15 @@ const createIntern = function(intern) {
 
 const createEngineer = function(engineer) {
     return `
-<div class="col" >
-    <div class="card text-bg-dark mb-3" style="max-width: auto;">
-        <div class="card-body">${engineer.name}</div>
-        <div class="card-title text-center">Engineer</div>
-        <div class="card-text text-center">ID: ${engineer.id} </div>
-        <div class="card-text text-center">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></div>
-        <div class="card-text text-center">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></div>
+<div class="col-4 mt-4 border">
+    <div class="card-header text-bg-dark mb-3" style="max-width: auto;">
+        <h2 class="text-center">${engineer.name}</h2>
+        <h3 class="card-title text-center">Engineer</h3>
+    </div>
+    <div class="card-body">
+        <p class="card-text text-center">ID: ${engineer.id} </p>
+        <p class="card-text text-center">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+        <p class="card-text text-center">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
     </div>
 </div>
     `;
@@ -86,13 +92,16 @@ const createMyTeam = function (teamInfo) {
     
 </head>
 <body>
-    <header class="text-center display-1">
-        My Team
+    <header class="navbar navbar-dark bg-dark">
+        <h1 class="text-center navbar-brand mb-0 h1 w-100 fs-1">My Team</h1>
     </header>
     <main>
-    <div class="row row-cols-1 row-cols-md-2 g-4 m-3"></div>
-    <!--Team Profiles-->
-    ${teamInfo}
+        <div class="container">
+            <div class="row justify-content-center">
+            <!--Team Profiles-->
+            ${teamInfo}
+            </div>
+        </div>
     </main>
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
