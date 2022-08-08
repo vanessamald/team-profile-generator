@@ -69,4 +69,20 @@ const createMyTeam = function (myTeam) {
     `;
 }
 
-//module.exports = generateHtml;
+generateHTML = function(team) {
+    let myTeam = '';
+    for (let i = 0; i < team.length; i++) {
+        if (team[i].role === 'Manager') {
+            myTeam += createManager(team[i]);
+        }
+        if (team[i].role === 'Intern') {
+            myTeam += createIntern(team[i]);
+        }
+        if (team[i].role === 'Engineer') {
+            myTeam += createEngineer(team[i]);
+        }
+    }
+    return createMyTeam(myTeam);
+}
+
+module.exports = generateHTML;
