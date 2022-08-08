@@ -142,20 +142,21 @@ const addingIntern = () => {
     },
     {
         type: 'input',
-        name: 'officeNumber',
-        message: 'Please provide an office number',
-        validate: officeNumber => {
-            if (officeNumber) {
+        name: 'school',
+        message: 'Please provide the name of the school',
+        validate: school => {
+            if (school) {
                 return true;
             } else {
-                return 'Please enter an office number';
+                return 'Please enter a school';
             }
-        }   
+        }
+
     }])
     .then(answers => {
-        const { name, id, email, officeNumber } = answers
+        const { name, id, email, school } = answers
         console.log(answers);
-        teamArray.push(new Intern(name, id, email, officeNumber));
+        teamArray.push(new Intern(name, id, email, school));
         addingEmployee();
     })
     
@@ -201,19 +202,19 @@ const addingEngineer = () => {
     },
     {
         type: 'input',
-        name: 'officeNumber',
-        message: 'Please provide an office number',
-        validate: officeNumber => {
-            if (officeNumber) {
+        name: 'github',
+        message: 'Please provide the github username',
+        validate: github => {
+            if (github) {
                 return true;
             } else {
-                return 'Please enter an office number';
+                return 'Please enter a github username';
             }
-        }  
+        }
     }])
     .then (answers => {
-        const { name, id, email, officeNumber } = answers;
-        teamArray.push(new Engineer(name, id, email, officeNumber));
+        const { name, id, email, github} = answers;
+        teamArray.push(new Engineer(name, id, email, github));
         addingEmployee();
     })
     

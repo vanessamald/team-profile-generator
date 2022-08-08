@@ -4,9 +4,9 @@ const createManager = function(manager) {
     <div class="card text-bg-dark mb-3" style="max-width: auto;">
         <div class="card-body">${manager.name}</div>
         <div class="card-title text-center">Manager</div>
-        <div class="card-text text-center">${manager.id} </div>
-        <div class="card-text text-center">${manager.email} </div>
-        <div class="card-text text-center">${manager.officeNumber}</div>
+        <div class="card-text text-center">ID: ${manager.id} </div>
+        <div class="card-text text-center">Email: <a href="mailto:${manager.email}">${manager.email}</a></div>
+        <div class="card-text text-center">Office Number: ${manager.officeNumber}</div>
     </div>
 </div>
     `;
@@ -18,9 +18,9 @@ const createIntern = function(intern) {
     <div class="card text-bg-dark mb-3" style="max-width: auto;">
         <div class="card-body">${intern.name}</div>
         <div class="card-title text-center">Intern</div>
-        <div class="card-text text-center">${intern.id} </div>
-        <div class="card-text text-center">${intern.email} </div>
-        <div class="card-text text-center">${intern.officeNumber}</div>
+        <div class="card-text text-center">ID: ${intern.id} </div>
+        <div class="card-text text-center">Email: <a href="mailto:${intern.email}">${intern.email}</a></div>
+        <div class="card-text text-center">School: ${intern.school}</div>
     </div>
 </div>
     `;
@@ -32,9 +32,9 @@ const createEngineer = function(engineer) {
     <div class="card text-bg-dark mb-3" style="max-width: auto;">
         <div class="card-body">${engineer.name}</div>
         <div class="card-title text-center">Engineer</div>
-        <div class="card-text text-center">${engineer.id} </div>
-        <div class="card-text text-center">${engineer.email} </div>
-        <div class="card-text text-center">${engineer.officeNumber}</div>
+        <div class="card-text text-center">ID: ${engineer.id} </div>
+        <div class="card-text text-center">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></div>
+        <div class="card-text text-center">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></div>
     </div>
 </div>
     `;
